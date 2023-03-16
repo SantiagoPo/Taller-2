@@ -10,9 +10,9 @@ const miPromesa = new Promise((resolve, reject) => {
   rl.question("Ingrese su edad: ", (edad) => {
     edad = parseInt(edad);
     if (edad >= 18) {
-      resolve("pasa");
+      resolve("Puede ingresar a la discoteca");
     } else {
-      reject("no pasa");
+      reject("No puede ingresa a la discoteca ya que es menor de edad, o su edad es incorrecta");
     }
     rl.close();
   });
