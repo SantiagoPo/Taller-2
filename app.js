@@ -10,7 +10,9 @@ const miPromesa = new Promise((resolve, reject) => {
     edad = (edad);
     if (edad >= 18) {
       resolve("Puede ingresar a la discoteca");
-    } else if (edad <=0) {
+    }else if (edad <='') {
+      reject("No has ingresado ningun dato");   
+    }else if (edad <=0) {
       reject("No has nacido, asi que no puedes ingresar");  
     } else if (edad <=18) {
       reject("No puede ingresa a la discoteca ya que es menor de edad");
@@ -32,3 +34,4 @@ async function ejecutarPromesa() {
 }
 
 ejecutarPromesa();
+
