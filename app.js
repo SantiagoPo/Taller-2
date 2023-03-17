@@ -1,4 +1,3 @@
-
 const readline = require("readline");
 
 const rl = readline.createInterface({
@@ -8,15 +7,20 @@ const rl = readline.createInterface({
 
 const miPromesa = new Promise((resolve, reject) => {
   rl.question("Ingrese su edad: ", (edad) => {
-    edad = parseInt(edad);
+    edad = (edad);
     if (edad >= 18) {
       resolve("Puede ingresar a la discoteca");
-    } else {
-      reject("No puede ingresa a la discoteca ya que es menor de edad, o su edad es incorrecta");
+    } else if (edad <=0) {
+      reject("No has nacido, asi que no puedes ingresar");  
+    } else if (edad <=18) {
+      reject("No puede ingresa a la discoteca ya que es menor de edad");
+    }else {
+      reject("Ingreso una edad incorrecta")
     }
     rl.close();
   });
 });
+
 
 async function ejecutarPromesa() {
   try {
@@ -28,4 +32,3 @@ async function ejecutarPromesa() {
 }
 
 ejecutarPromesa();
-
